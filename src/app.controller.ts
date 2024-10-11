@@ -10,4 +10,9 @@ export class AppController {
     this.appService.logImport();
     return 'Import endpoint hit!';
   }
+
+  @Get('books')
+  async getBooks(): Promise<any> {
+    return await this.appService.getBooksByPortugueseAuthors();
+  }
 }

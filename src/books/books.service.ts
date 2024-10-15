@@ -3,19 +3,20 @@ import { CreateBookDto } from './dto/create-book.dto';
 import { UpdateBookDto } from './dto/update-book.dto';
 import { Repository } from 'typeorm';
 import { Book } from './entities/book.entity';
+import { InjectRepository } from '@nestjs/typeorm';
 
 @Injectable()
 export class BooksService {
-  onstructor(
-    @Inject('BOOK_REPOSITORY')
-    private bookRepository: Repository<Book>,
+  constructor(
+    @InjectRepository(Book)
+    private booksRepository: Repository<Book>,
   ) {}
   create(createBookDto: CreateBookDto) {
     return 'This action adds a new book';
   }
 
-  findAll() {
-    return `This action returns all books`;
+  findAll(): Promise<Book[]> {
+    return this.booksRepository.find();
   }
 
   findOne(id: number) {

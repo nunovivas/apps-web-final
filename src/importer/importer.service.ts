@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable()
-export class CountriesService {
+export class ImporterService {
   constructor(private readonly httpService: HttpService) {}
 
   getEuropeanCountries(): Observable<any> {

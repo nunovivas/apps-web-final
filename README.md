@@ -13,6 +13,16 @@
 ### Objectivo
 Ter uma aplicação de backend que, integre dados de um serviço web, os processe (em forma de sumarização e filtragem) e os disponibilize através de REST-API. 
 Ter tudo num único sistema / serviço.
+
+## Tradução / Mappings
+name.common = nomeComum
+name.official = nomeOficial
+unMember = membroEu
+subRegion = subRegiao
+
+Se der:
+name.nativeName.[].official = nomeNativo
+
 ### Serviço Web
 Este será, em princípio, o serviço web disponível em openlibrary.org o qual permite pesquisar uma base de dados mundial de livros e outras publicações. A ideia será importar dados de autores de um só Pais (em princípio e se possível Portugal), resumi-los em informação de Autor/Titulo/Ano de publicação/Leituras/Média de avaliações e disponibilizar esta informação via um endpoint REST.API.
 Este end-point, terá, portanto, as seguintes funcionalidades e características:

@@ -1,0 +1,4 @@
+passar tudo para o serviço de importação
+adicionar procuras mais especificas
+fazer a autenticação
+FINITO

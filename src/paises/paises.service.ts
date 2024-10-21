@@ -9,26 +9,30 @@ import { Pais } from './entities/pais.entity';
 export class PaisesService {
   constructor(
     @InjectRepository(Pais)
-    private readonly paiseRepository: Repository<Pais>,
+    private readonly paisRepository: Repository<Pais>,
   ) {}
-  async create(createPaiseDto: CreatePaisDto): Promise<Pais> {
-    const paise = this.paiseRepository.create(createPaiseDto);
-    return this.paiseRepository.save(paise);
+  async create(createPaisDto: CreatePaisDto): Promise<Pais> {
+    const pais = this.paisRepository.create(createPaisDto);
+    return this.paisRepository.save(pais);
   }
 
-  findAll() {
-    return `This action returns all paises`;
+  async findAll(): Promise<Pais[]> {
+    return this.paisRepository.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} paise`;
+  async findOne(id: number): Promise<Pais> {
+    return this.paisRepository.findOneBy({ id });
   }
 
-  update(id: number, updatePaisDto: UpdatePaisDto) {
-    return `This action updates a #${id} paise`;
+  async update(id: number, updatePaisDto: UpdatePaisDto): Promise<void> {
+    await this.paisRepository.update(id, updatePaisDto);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} paise`;
+  async remove(id: number): Promise<void> {
+    await this.paisRepository.delete(id);
+  }
+
+  async removeAll(): Promise<void> {
+    await this.paisRepository.clear();
   }
 }

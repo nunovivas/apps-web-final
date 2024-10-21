@@ -24,11 +24,13 @@ export class AppController {
     return 'Original API is down';
     //return await this.appService.getBooksByPortugueseAuthors();
   }
-  @Get('paises')
+  @Get('importapaises')
   async getEuropeanCountries(): Promise<any> {
     const countries = await this.importerService
       .getEuropeanCountries()
       .toPromise();
+    // remove todos os paises
+    await this.paisesService.removeAll();
     countries.forEach(async (country: Country) => {
       let nativeName = 'sem informação';
       if (country.name && country.name.nativeName) {

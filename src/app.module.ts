@@ -20,7 +20,9 @@ import { PaisesModule } from './paises/paises.module';
       database: 'paises',
       //entities: [Book],
       autoLoadEntities: true,
-      synchronize: true, //changed by nuno
+      synchronize: false, //changed by nuno - cria as tabelas
+      dropSchema: false, // This will drop the schema and recreate it
+
     }),
     //BooksModule,
     CountriesModule,

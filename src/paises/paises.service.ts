@@ -24,6 +24,11 @@ export class PaisesService {
     return this.paisRepository.findOneBy({ id });
   }
 
+  async findAllByMembroUN(membroUN: boolean): Promise<Pais[]> {
+    console.log(membroUN);
+    return this.paisRepository.find({ where: { membroUN } });
+  }
+
   async update(id: number, updatePaisDto: UpdatePaisDto): Promise<void> {
     await this.paisRepository.update(id, updatePaisDto);
   }

@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { PaisesService } from './paises.service';
 import { CreatePaisDto } from './dto/create-pais.dto';
 import { UpdatePaisDto } from './dto/update-pais.dto';
@@ -20,6 +28,10 @@ export class PaisesController {
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.paisesService.findOne(+id);
+  }
+  @Get('findAllByMembroUN/:membroUN')
+  findAllByMembroUN(@Param('membroUN') membroUN: string) {
+    return this.paisesService.findAllByMembroUN(membroUN === 'true');
   }
 
   @Patch(':id')

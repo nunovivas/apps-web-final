@@ -22,7 +22,6 @@ import { PaisesModule } from './paises/paises.module';
       autoLoadEntities: true,
       synchronize: false, //changed by nuno - cria as tabelas
       dropSchema: false, // This will drop the schema and recreate it
-
     }),
     //BooksModule,
     CountriesModule,

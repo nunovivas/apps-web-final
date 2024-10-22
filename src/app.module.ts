@@ -6,6 +6,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
 import { CountriesModule } from './importer/importer.module';
 import { PaisesModule } from './paises/paises.module';
+import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './users/users.module';
 
 // more info about connection here: https://stackoverflow.com/questions/62646494/nestjs-typeormmodule-unable-to-connect-to-the-database-retrying-er-parse-er
 @Module({
@@ -26,6 +28,8 @@ import { PaisesModule } from './paises/paises.module';
     //BooksModule,
     CountriesModule,
     PaisesModule,
+    AuthModule,
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],

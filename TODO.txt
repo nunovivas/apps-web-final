@@ -1,4 +1,4 @@
-passar tudo para o serviço de importação
-adicionar procuras mais especificas
+passar tudo para o serviço de importação DONE
+adicionar procuras mais especificas DONE
 fazer a autenticação
 FINITO

@@ -6,11 +6,14 @@ import {
   Patch,
   Param,
   Delete,
+  UseGuards,
 } from '@nestjs/common';
 import { PaisesService } from './paises.service';
 import { CreatePaisDto } from './dto/create-pais.dto';
 import { UpdatePaisDto } from './dto/update-pais.dto';
+import { AuthGuard } from 'src/auth/auth.guard';
 
+@UseGuards(AuthGuard)
 @Controller('paises')
 export class PaisesController {
   constructor(private readonly paisesService: PaisesService) {}

@@ -12,7 +12,10 @@ import { PaisesService } from './paises.service';
 import { CreatePaisDto } from './dto/create-pais.dto';
 import { UpdatePaisDto } from './dto/update-pais.dto';
 import { AuthGuard } from 'src/auth/auth.guard';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Endpoints de Paises - São pesquisados diretamente na BD MYSQL')
+@ApiBearerAuth() // esta linha permite usar o bearer token configurado no ficheiro auth.guard.ts
 @UseGuards(AuthGuard)
 @Controller('paises')
 export class PaisesController {

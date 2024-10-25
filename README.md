@@ -55,6 +55,14 @@ A base de dados, implementada em MySQL, terá as seguintes características:
 2.	Nome de utilizador e password a serem definidos à posteriori;
 3.	Uma única tabela chamada de pais. Os campos estão definidos via código na entidade Pais.
 
+### Swagger - OpenAPI / API Manager
+
+em http:/[source]:3000/api o utilizador terá acesso à UI do Swagger. Nela pode aceder e testar os endpoints disponibilizados pela aplicação. Estão protegidos por JWT toke o que requer, portanto, que se faça login. O Token tem uma validade de 600 segundos ()
+
+### Notas
+
+Os dois utilizadores disponiveis estão "hard-coded" na aplicação. Esta foi opção porque se trata de um projeto de Universidade e para demonstrar login sem criar mais complexidade.
+
 
 ### Pré-requisitos
 

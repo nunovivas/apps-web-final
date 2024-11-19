@@ -8,6 +8,8 @@ import { CountriesModule } from './importer/importer.module';
 import { PaisesModule } from './paises/paises.module';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
+import { IotDataModule } from './iot-data/iot-data.module';
+import { MqttService } from './mqtt/mqtt.service';
 
 // more info about connection here: https://stackoverflow.com/questions/62646494/nestjs-typeormmodule-unable-to-connect-to-the-database-retrying-er-parse-er
 @Module({
@@ -19,7 +21,7 @@ import { UsersModule } from './users/users.module';
       port: 3306,
       username: 'root',
       password: 'Mysql1234!',
-      database: 'paises',
+      database: 'ualg',
       //entities: [Book],
       autoLoadEntities: true,
       synchronize: false, //changed by nuno - cria as tabelas
@@ -30,9 +32,10 @@ import { UsersModule } from './users/users.module';
     PaisesModule,
     AuthModule,
     UsersModule,
+    IotDataModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, MqttService],
 })
 export class AppModule {
   constructor(private dataSource: DataSource) {}

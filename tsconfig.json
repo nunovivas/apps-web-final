@@ -17,5 +17,7 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
-  }
+  },
+  "include": ["src/**/*"], //Added by Nuno
+  "exclude": ["node_modules", "dist"] //Added by Nuno
 }

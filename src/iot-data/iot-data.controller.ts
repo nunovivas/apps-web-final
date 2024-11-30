@@ -29,10 +29,10 @@ export class IotDataController {
     description: 'Dados da leitura de IOT',
     schema: {
       example: {
-        nomeDevice: 'ExemploDevice',
+        nomeDevice: 'Medidor de qualidade do ar da aula de IOT',
         nomeMetrica: 'PM2.5',
         valor: 25,
-        timestamp: '2023-10-01T12:00:00Z',
+        dataRegisto: '2023-11-26T12:00:00Z',
       },
     },
   })

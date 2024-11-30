@@ -4,7 +4,7 @@ import { ApiProperty } from '@nestjs/swagger';
 export class SignInDto {
   @ApiProperty({
     description: 'The username of the user',
-    example: 'nuno',
+    example: 'janio',
   })
   @IsString()
   username: string;
